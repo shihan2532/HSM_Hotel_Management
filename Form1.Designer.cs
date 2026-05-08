@@ -1,4 +1,6 @@
-﻿namespace HotelManagementSystem
+﻿using System.Windows.Forms;
+
+namespace HotelManagementSystem
 {
     partial class Form1
     {
@@ -71,13 +73,12 @@
             this.txtname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtname.Location = new System.Drawing.Point(167, 205);
+            this.txtname.Location = new System.Drawing.Point(168, 210);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(233, 22);
             this.txtname.TabIndex = 2;
             this.txtname.Text = "Enter your name";
             this.txtname.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtname_MouseClick);
-          
             // 
             // txtpassword
             // 
@@ -85,7 +86,7 @@
             this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtpassword.Location = new System.Drawing.Point(167, 305);
+            this.txtpassword.Location = new System.Drawing.Point(167, 310);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(234, 22);
             this.txtpassword.TabIndex = 3;

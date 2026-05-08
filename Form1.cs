@@ -50,6 +50,8 @@ namespace HotelManagementSystem
             }
         }
 
+        
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             lblerrorname.Text = lblerrorpassword.Text = "";
@@ -100,7 +102,7 @@ namespace HotelManagementSystem
                 {
                     if (roleName == "ADMIN")
                     {
-                        MessageBox.Show("Succesfully Loged In", "Message", MessageBoxButtons.OK);
+                        MessageBox.Show("Succesfully Loged In", "Message", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                         AdminDashBoard adminDashboard = new AdminDashBoard(name);
                         adminDashboard.Show();
                         this.Hide();
@@ -110,7 +112,7 @@ namespace HotelManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password");
+                    MessageBox.Show("Invalid username or password","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
