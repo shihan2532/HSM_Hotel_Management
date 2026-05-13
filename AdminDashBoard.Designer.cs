@@ -37,11 +37,11 @@
             this.btnGuestManagement = new System.Windows.Forms.Button();
             this.btnRoomManagemt = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblUsersCount = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,7 +74,6 @@
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
-           
             // 
             // btnReort
             // 
@@ -153,6 +152,16 @@
             this.panel2.Size = new System.Drawing.Size(1920, 94);
             this.panel2.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1585, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Total Users :";
+            // 
             // lblUsersCount
             // 
             this.lblUsersCount.AutoSize = true;
@@ -197,16 +206,6 @@
             this.button7.Text = "X";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1585, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Total Users :";
             // 
             // AdminDashBoard
             // 
