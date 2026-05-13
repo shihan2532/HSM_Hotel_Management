@@ -27,7 +27,8 @@ namespace HotelManagementSystem
         private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+            //Application.Exit();
+
         }
 
         private void AdminDashBoard_Load(object sender, EventArgs e)
@@ -41,7 +42,22 @@ namespace HotelManagementSystem
             var result = cmd.ExecuteScalar();
 
             lblUsersCount.Text = result.ToString();
+
+            //string query2 = "SELECT  userId FROM [user] where userId = (SELECT MAX(userId) FROM [user]) ";
+                string query2 = "SELECT MAX(userId) FROM [user]";
+
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+
+            var result2 = cmd2.ExecuteScalar();
+
+            MessageBox.Show("Last User ID: " + result2.ToString());
+
             con.Close();
+
+
+
+
+
         }
 
        
