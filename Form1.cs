@@ -50,7 +50,7 @@ namespace HotelManagementSystem
             }
         }
 
-        
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -116,10 +116,19 @@ namespace HotelManagementSystem
                 }
 
             }
+
+
             
 
         }
 
-       
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+        }
+
+
     }
 }

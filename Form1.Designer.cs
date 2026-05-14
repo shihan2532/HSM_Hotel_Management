@@ -117,6 +117,7 @@ namespace HotelManagementSystem
             this.btnSignup.TabIndex = 5;
             this.btnSignup.Text = "Sign Up";
             this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // button3
             // 
