@@ -60,6 +60,11 @@ namespace HotelManagementSystem
 
         }
 
-       
+        private void btnRoomManagemt_Click(object sender, EventArgs e)
+        {
+            Room r1 = new Room();
+            r1.Show();
+            this.Close();
+        }
     }
 }

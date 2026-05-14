@@ -100,6 +100,7 @@
             this.btnRoomManagemt.TabIndex = 0;
             this.btnRoomManagemt.Text = "Room";
             this.btnRoomManagemt.UseVisualStyleBackColor = false;
+            this.btnRoomManagemt.Click += new System.EventHandler(this.btnRoomManagemt_Click);
             // 
             // btnGuestManagement
             // 
@@ -218,7 +219,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDashBoard";
             this.Text = "AdminDashBoard";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminDashBoard_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
