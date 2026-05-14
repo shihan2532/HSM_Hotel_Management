@@ -16,5 +16,14 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string selectedItem = comboBox1.SelectedItem.ToString();
+                MessageBox.Show("Selected item: " + selectedItem);
+            }
+        }
     }
 }

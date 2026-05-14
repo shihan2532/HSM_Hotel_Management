@@ -32,10 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnReort = new System.Windows.Forms.Button();
+            this.btnRoomManagemt = new System.Windows.Forms.Button();
+            this.btnGuestManagement = new System.Windows.Forms.Button();
             this.btnUserManagemt = new System.Windows.Forms.Button();
             this.btnStaffManagement = new System.Windows.Forms.Button();
-            this.btnGuestManagement = new System.Windows.Forms.Button();
-            this.btnRoomManagemt = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsersCount = new System.Windows.Forms.Label();
@@ -52,14 +52,14 @@
             this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnReort);
+            this.panel1.Controls.Add(this.btnRoomManagemt);
+            this.panel1.Controls.Add(this.btnGuestManagement);
             this.panel1.Controls.Add(this.btnUserManagemt);
             this.panel1.Controls.Add(this.btnStaffManagement);
-            this.panel1.Controls.Add(this.btnGuestManagement);
-            this.panel1.Controls.Add(this.btnRoomManagemt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 1080);
+            this.panel1.Size = new System.Drawing.Size(160, 750);
             this.panel1.TabIndex = 0;
             // 
             // btnSettings
@@ -68,7 +68,7 @@
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(24, 874);
+            this.btnSettings.Location = new System.Drawing.Point(32, 603);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(110, 61);
             this.btnSettings.TabIndex = 5;
@@ -81,12 +81,38 @@
             this.btnReort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReort.Location = new System.Drawing.Point(24, 722);
+            this.btnReort.Location = new System.Drawing.Point(32, 513);
             this.btnReort.Name = "btnReort";
             this.btnReort.Size = new System.Drawing.Size(110, 61);
             this.btnReort.TabIndex = 4;
             this.btnReort.Text = "Reports";
             this.btnReort.UseVisualStyleBackColor = false;
+            // 
+            // btnRoomManagemt
+            // 
+            this.btnRoomManagemt.BackColor = System.Drawing.Color.Cyan;
+            this.btnRoomManagemt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomManagemt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRoomManagemt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomManagemt.Location = new System.Drawing.Point(32, 162);
+            this.btnRoomManagemt.Name = "btnRoomManagemt";
+            this.btnRoomManagemt.Size = new System.Drawing.Size(110, 70);
+            this.btnRoomManagemt.TabIndex = 0;
+            this.btnRoomManagemt.Text = "Room";
+            this.btnRoomManagemt.UseVisualStyleBackColor = false;
+            // 
+            // btnGuestManagement
+            // 
+            this.btnGuestManagement.BackColor = System.Drawing.Color.Cyan;
+            this.btnGuestManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuestManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuestManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuestManagement.Location = new System.Drawing.Point(32, 260);
+            this.btnGuestManagement.Name = "btnGuestManagement";
+            this.btnGuestManagement.Size = new System.Drawing.Size(110, 60);
+            this.btnGuestManagement.TabIndex = 1;
+            this.btnGuestManagement.Text = "Guest";
+            this.btnGuestManagement.UseVisualStyleBackColor = false;
             // 
             // btnUserManagemt
             // 
@@ -94,7 +120,7 @@
             this.btnUserManagemt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserManagemt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUserManagemt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserManagemt.Location = new System.Drawing.Point(24, 581);
+            this.btnUserManagemt.Location = new System.Drawing.Point(32, 427);
             this.btnUserManagemt.Name = "btnUserManagemt";
             this.btnUserManagemt.Size = new System.Drawing.Size(110, 61);
             this.btnUserManagemt.TabIndex = 3;
@@ -107,38 +133,12 @@
             this.btnStaffManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaffManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaffManagement.Location = new System.Drawing.Point(24, 440);
+            this.btnStaffManagement.Location = new System.Drawing.Point(32, 337);
             this.btnStaffManagement.Name = "btnStaffManagement";
             this.btnStaffManagement.Size = new System.Drawing.Size(110, 61);
             this.btnStaffManagement.TabIndex = 2;
             this.btnStaffManagement.Text = "Staff";
             this.btnStaffManagement.UseVisualStyleBackColor = false;
-            // 
-            // btnGuestManagement
-            // 
-            this.btnGuestManagement.BackColor = System.Drawing.Color.Cyan;
-            this.btnGuestManagement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuestManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuestManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuestManagement.Location = new System.Drawing.Point(24, 301);
-            this.btnGuestManagement.Name = "btnGuestManagement";
-            this.btnGuestManagement.Size = new System.Drawing.Size(110, 60);
-            this.btnGuestManagement.TabIndex = 1;
-            this.btnGuestManagement.Text = "Guest";
-            this.btnGuestManagement.UseVisualStyleBackColor = false;
-            // 
-            // btnRoomManagemt
-            // 
-            this.btnRoomManagemt.BackColor = System.Drawing.Color.Cyan;
-            this.btnRoomManagemt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoomManagemt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRoomManagemt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomManagemt.Location = new System.Drawing.Point(24, 158);
-            this.btnRoomManagemt.Name = "btnRoomManagemt";
-            this.btnRoomManagemt.Size = new System.Drawing.Size(110, 70);
-            this.btnRoomManagemt.TabIndex = 0;
-            this.btnRoomManagemt.Text = "Room";
-            this.btnRoomManagemt.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -149,14 +149,14 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(160, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1920, 94);
+            this.panel2.Size = new System.Drawing.Size(1500, 94);
             this.panel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1585, 74);
+            this.label1.Location = new System.Drawing.Point(995, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 3;
@@ -167,7 +167,7 @@
             this.lblUsersCount.AutoSize = true;
             this.lblUsersCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsersCount.ForeColor = System.Drawing.Color.Red;
-            this.lblUsersCount.Location = new System.Drawing.Point(1697, 70);
+            this.lblUsersCount.Location = new System.Drawing.Point(1098, 70);
             this.lblUsersCount.Name = "lblUsersCount";
             this.lblUsersCount.Size = new System.Drawing.Size(42, 24);
             this.lblUsersCount.TabIndex = 2;
@@ -199,7 +199,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Red;
-            this.button7.Location = new System.Drawing.Point(1871, 0);
+            this.button7.Location = new System.Drawing.Point(1251, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(49, 51);
             this.button7.TabIndex = 2;
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1300, 750);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
