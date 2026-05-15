@@ -25,7 +25,7 @@ namespace HotelManagementSystem
             string query = "SELECT MAX(userId) FROM [user]";
             SqlCommand cmd = new SqlCommand(query, con);
             var result = cmd.ExecuteScalar();
-            con.Close();
+            
 
             //last user id will be stored in luserId and add in user name to make it unique
 
@@ -39,7 +39,8 @@ namespace HotelManagementSystem
             {
                 luserId = "0";
             }
-           
+            con.Close();
+
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -120,7 +121,7 @@ namespace HotelManagementSystem
                 SqlCommand cmd1 = new SqlCommand(query1, con);
                 cmd1.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
                 var count = (int)cmd1.ExecuteScalar();
-                con.Close();
+                
 
 
                 if (txtEmail.Text.Contains("@") && txtEmail.Text.Contains("."))
@@ -141,8 +142,9 @@ namespace HotelManagementSystem
                 {
                     lblerroremail.Text = "Invalid email format.";
                     return;
-                } 
-                   
+                }
+                con.Close();
+
 
 
                 password = txtPassword.Text.Trim();
@@ -150,17 +152,50 @@ namespace HotelManagementSystem
                 //nid validation only digits allowed and length must be more than 5 and unique
 
                 con.Open();
-                string query4 = "SELECT COUNT(*) FROM [user] WHERE nid = @nid";
-                SqlCommand cmd4 = new SqlCommand(query4, con);
+                string query2 = "SELECT COUNT(*) FROM [user] WHERE nid = @nid";
+                SqlCommand cmd4 = new SqlCommand(query2, con);
                 cmd4.Parameters.AddWithValue("@nid", txtNid.Text.Trim());
-                var count3 = (int)cmd4.ExecuteScalar();
-                con.Close();
+                var count1 = (int)cmd4.ExecuteScalar();
+ 
 
-                if (count3 == 0)
+                if (!txtNid.Text.All(char.IsDigit) || txtNid.Text.Length <= 5)
                 {
+                    lblerrornid.Text = "Invalid NID. Only digits allowed, length must be more than 5.";
+                    return;
+                }
 
+                if (count1 == 0)
+                {
+                    lblerrornid.Text = "";
                     nid = txtNid.Text.Trim();
 
+                }
+                else
+                {
+                    lblerrornid.Text = "NID already exists.";
+                    return;
+                }
+                con.Close();
+                //phone number validation only digits allowed and length must be 11
+
+                
+
+                con.Open();
+                string query3 = "SELECT COUNT(*) FROM [user] WHERE phoneNumber = @PhoneNumber";
+                SqlCommand cmd3 = new SqlCommand(query3, con);
+                cmd3.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text.Trim());
+                var count2 = (int)cmd3.ExecuteScalar();
+
+                if (!txtPhoneNumber.Text.All(char.IsDigit) || txtPhoneNumber.Text.Length != 11)
+                {
+                    lblerrorphonenumber.Text = "Invalid phone number. Only digits allowed, length must be 11.";
+                    return;
+                }
+
+                if (count2 == 0)
+                {
+                    lblerrorphonenumber.Text = "";
+                    phone = txtPhoneNumber.Text.Trim();
                 }
                 else
                 {
@@ -168,46 +203,8 @@ namespace HotelManagementSystem
                     return;
                 }
 
-                if (!nid.All(char.IsDigit) || nid.Length <= 5)
-                {
-                    lblerrornid.Text = "Invalid NID. Only digits allowed, length must be more than 5.";
-                    return;
-                }
-
-                if (!phone.All(char.IsDigit) || phone.Length != 11)
-                {
-                    lblerrorphonenumber.Text = "Invalid phone number. Only digits allowed, length must be 11.";
-                    return;
-                }
-
-                //phone number validation only digits allowed and length must be 11
-
-                con.Open();
-                string query3 = "SELECT COUNT(*) FROM [user] WHERE phoneNumber = @PhoneNumber";
-                SqlCommand cmd3 = new SqlCommand(query3, con);
-                cmd3.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text.Trim());
-                var count1 = (int)cmd3.ExecuteScalar();
                 con.Close();
-               
-                    if (count1 == 0)
-                    {
-                       
-                        phone = txtPhoneNumber.Text.Trim();
 
-                    }
-                    else
-                    {
-                        lblerrorphonenumber.Text = "Phone number already exists.";
-                        return;
-                    }
-
-
-                    if (!phone.All(char.IsDigit) || phone.Length != 11)
-                    {
-                        lblerrorphonenumber.Text = "Invalid phone number. Only digits allowed, length must be 11.";
-                        return;
-                    }
-                
 
 
                 address = richTextBox1.Text.Trim();
@@ -233,7 +230,7 @@ namespace HotelManagementSystem
                 cmd2.Parameters.AddWithValue("@role", role);
 
                 var result = cmd2.ExecuteNonQuery();
-                con.Close();
+               
 
                 if (result > 0)
                 {
@@ -246,9 +243,9 @@ namespace HotelManagementSystem
                 }
 
 
+                con.Close();
 
 
-                
             }
         }
 
