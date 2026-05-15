@@ -13,13 +13,14 @@ namespace HotelManagementSystem
 {
     public partial class AdminDashBoard : Form
     {
-         private string name;
-        public AdminDashBoard(string name)
+         private string username,luserId;
+        
+        public AdminDashBoard(string username)
         {
 
             InitializeComponent();
-            this.name = name;
-            lblWelcome.Text = "Welcome, " + name;
+            this.username = username;
+            lblWelcome.Text = "Welcome, " + username;
 
 
         }
@@ -38,26 +39,18 @@ namespace HotelManagementSystem
             //string query = "SELECT COUNT(*) FROM [user] where role = 'ADMIN'";
             string query = "SELECT COUNT(*) FROM [user] ";
             SqlCommand cmd = new SqlCommand(query, con);
-            
             var result = cmd.ExecuteScalar();
-
             lblUsersCount.Text = result.ToString();
-
-            //string query2 = "SELECT  userId FROM [user] where userId = (SELECT MAX(userId) FROM [user]) ";
-                string query2 = "SELECT MAX(userId) FROM [user]";
-
-            SqlCommand cmd2 = new SqlCommand(query2, con);
-
-            var result2 = cmd2.ExecuteScalar();
-
-            MessageBox.Show("Last User ID: " + result2.ToString());
-
-            con.Close();
+           con.Close();
 
 
+        }
 
-
-
+        private void btnGuestManagement_Click(object sender, EventArgs e)
+        {
+            Guest gs = new Guest();
+            gs.Show();
+            this.Hide();
         }
 
         private void btnRoomManagemt_Click(object sender, EventArgs e)
@@ -66,5 +59,7 @@ namespace HotelManagementSystem
             r1.Show();
             this.Close();
         }
+
+
     }
 }

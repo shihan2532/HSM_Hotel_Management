@@ -70,7 +70,7 @@ namespace HotelManagementSystem
             SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;TrustServerCertificate=True");
             con.Open();
 
-            string query = "Select name,role,userName,password from [user] where userName = @username and password = @password";
+            string query = "Select role,userName,password from [user] where userName = @username and password = @password";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", txtname.Text);
@@ -88,7 +88,6 @@ namespace HotelManagementSystem
                 role.Read();
                 roleName = role["role"].ToString();
                 username = role["userName"].ToString();
-                name = role["name"].ToString();
                 password = role["password"].ToString();
 
 
@@ -103,7 +102,7 @@ namespace HotelManagementSystem
                     if (roleName == "ADMIN")
                     {
                         MessageBox.Show("Succesfully Loged In", "Message", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                        AdminDashBoard adminDashboard = new AdminDashBoard(name);
+                        AdminDashBoard adminDashboard = new AdminDashBoard(username);
                         adminDashboard.Show();
                         this.Hide();
                     }

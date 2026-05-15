@@ -68,7 +68,7 @@
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(32, 603);
+            this.btnSettings.Location = new System.Drawing.Point(26, 607);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(110, 61);
             this.btnSettings.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.btnReort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReort.Location = new System.Drawing.Point(32, 513);
+            this.btnReort.Location = new System.Drawing.Point(27, 516);
             this.btnReort.Name = "btnReort";
             this.btnReort.Size = new System.Drawing.Size(110, 61);
             this.btnReort.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.btnRoomManagemt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomManagemt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRoomManagemt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomManagemt.Location = new System.Drawing.Point(32, 162);
+            this.btnRoomManagemt.Location = new System.Drawing.Point(26, 162);
             this.btnRoomManagemt.Name = "btnRoomManagemt";
             this.btnRoomManagemt.Size = new System.Drawing.Size(110, 70);
             this.btnRoomManagemt.TabIndex = 0;
@@ -108,12 +108,13 @@
             this.btnGuestManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuestManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuestManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuestManagement.Location = new System.Drawing.Point(32, 260);
+            this.btnGuestManagement.Location = new System.Drawing.Point(24, 260);
             this.btnGuestManagement.Name = "btnGuestManagement";
             this.btnGuestManagement.Size = new System.Drawing.Size(110, 60);
             this.btnGuestManagement.TabIndex = 1;
             this.btnGuestManagement.Text = "Guest";
             this.btnGuestManagement.UseVisualStyleBackColor = false;
+            this.btnGuestManagement.Click += new System.EventHandler(this.btnGuestManagement_Click);
             // 
             // btnUserManagemt
             // 
@@ -121,7 +122,7 @@
             this.btnUserManagemt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserManagemt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUserManagemt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserManagemt.Location = new System.Drawing.Point(32, 427);
+            this.btnUserManagemt.Location = new System.Drawing.Point(26, 430);
             this.btnUserManagemt.Name = "btnUserManagemt";
             this.btnUserManagemt.Size = new System.Drawing.Size(110, 61);
             this.btnUserManagemt.TabIndex = 3;
@@ -134,7 +135,7 @@
             this.btnStaffManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStaffManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaffManagement.Location = new System.Drawing.Point(32, 337);
+            this.btnStaffManagement.Location = new System.Drawing.Point(26, 346);
             this.btnStaffManagement.Name = "btnStaffManagement";
             this.btnStaffManagement.Size = new System.Drawing.Size(110, 61);
             this.btnStaffManagement.TabIndex = 2;
@@ -150,7 +151,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(160, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1500, 94);
+            this.panel2.Size = new System.Drawing.Size(1140, 94);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -218,6 +219,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashBoard";
             this.Load += new System.EventHandler(this.AdminDashBoard_Load);
             this.panel1.ResumeLayout(false);
