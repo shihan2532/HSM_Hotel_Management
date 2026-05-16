@@ -46,6 +46,7 @@
             this.cmbroomtype = new System.Windows.Forms.ComboBox();
             this.cmbbed = new System.Windows.Forms.ComboBox();
             this.cmbroomstatus = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Cyan;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -242,6 +244,19 @@
             this.cmbroomstatus.Size = new System.Drawing.Size(298, 21);
             this.cmbroomstatus.TabIndex = 18;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MintCream;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(22, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 44);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,5 +308,6 @@
         private System.Windows.Forms.ComboBox cmbroomtype;
         private System.Windows.Forms.ComboBox cmbbed;
         private System.Windows.Forms.ComboBox cmbroomstatus;
+        private System.Windows.Forms.Button button1;
     }
 }

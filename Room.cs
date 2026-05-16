@@ -13,10 +13,13 @@ namespace HotelManagementSystem
 {
     public partial class Room : Form
     {
+        private string username;    
 
-        public Room()
+        public Room(string username)
         {
             InitializeComponent();
+            this.username = username;
+           
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -163,6 +166,13 @@ namespace HotelManagementSystem
                     con.Close();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminDashBoard adminDashBoard = new AdminDashBoard(username);
+            adminDashBoard.Show();
+            this.Hide();
         }
     }
             

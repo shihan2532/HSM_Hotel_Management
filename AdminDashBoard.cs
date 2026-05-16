@@ -48,14 +48,14 @@ namespace HotelManagementSystem
 
         private void btnGuestManagement_Click(object sender, EventArgs e)
         {
-            Guest gs = new Guest();
+            Guest gs = new Guest(username);
             gs.Show();
             this.Hide();
         }
 
         private void btnRoomManagemt_Click(object sender, EventArgs e)
         {
-            Room r1 = new Room();
+            Room r1 = new Room(username);
             r1.Show();
             this.Close();
         }
