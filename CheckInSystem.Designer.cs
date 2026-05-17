@@ -35,20 +35,19 @@
             this.btnAvailable = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtNid = new System.Windows.Forms.TextBox();
             this.cmbroomType = new System.Windows.Forms.ComboBox();
             this.cmbbedType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtchekedin = new System.Windows.Forms.Label();
-            this.dtpchekhout = new System.Windows.Forms.Label();
             this.txtuserid = new System.Windows.Forms.TextBox();
             this.dtpcheckedIn = new System.Windows.Forms.DateTimePicker();
-            this.dtpchedout = new System.Windows.Forms.DateTimePicker();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnuserIdSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtroomId = new System.Windows.Forms.TextBox();
+            this.btnchekedout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +74,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(517, 286);
             this.dataGridView1.TabIndex = 2;
-           
             // 
             // btnShow
             // 
@@ -120,13 +118,13 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Room Id :";
             // 
-            // txtUserName
+            // txtNid
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(365, 587);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(153, 26);
-            this.txtUserName.TabIndex = 8;
+            this.txtNid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNid.Location = new System.Drawing.Point(365, 587);
+            this.txtNid.Name = "txtNid";
+            this.txtNid.Size = new System.Drawing.Size(153, 26);
+            this.txtNid.TabIndex = 8;
             // 
             // cmbroomType
             // 
@@ -172,16 +170,6 @@
             this.dtchekedin.TabIndex = 12;
             this.dtchekedin.Text = "Cheked in :";
             // 
-            // dtpchekhout
-            // 
-            this.dtpchekhout.AutoSize = true;
-            this.dtpchekhout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpchekhout.Location = new System.Drawing.Point(677, 374);
-            this.dtpchekhout.Name = "dtpchekhout";
-            this.dtpchekhout.Size = new System.Drawing.Size(100, 20);
-            this.dtpchekhout.TabIndex = 13;
-            this.dtpchekhout.Text = "check Out :";
-            // 
             // txtuserid
             // 
             this.txtuserid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,17 +185,10 @@
             this.dtpcheckedIn.Size = new System.Drawing.Size(216, 20);
             this.dtpcheckedIn.TabIndex = 15;
             // 
-            // dtpchedout
-            // 
-            this.dtpchedout.Location = new System.Drawing.Point(808, 374);
-            this.dtpchedout.Name = "dtpchedout";
-            this.dtpchedout.Size = new System.Drawing.Size(216, 20);
-            this.dtpchedout.TabIndex = 16;
-            // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(783, 453);
+            this.btnSubmit.Location = new System.Drawing.Point(808, 406);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(95, 35);
             this.btnSubmit.TabIndex = 17;
@@ -218,7 +199,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(945, 453);
+            this.btnReset.Location = new System.Drawing.Point(945, 406);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(79, 35);
             this.btnReset.TabIndex = 18;
@@ -243,9 +224,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(368, 564);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 20;
-            this.label3.Text = "User Name :";
+            this.label3.Text = "NID :";
             // 
             // txtroomId
             // 
@@ -255,11 +236,23 @@
             this.txtroomId.Size = new System.Drawing.Size(285, 26);
             this.txtroomId.TabIndex = 21;
             // 
+            // btnchekedout
+            // 
+            this.btnchekedout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchekedout.Location = new System.Drawing.Point(17, 201);
+            this.btnchekedout.Name = "btnchekedout";
+            this.btnchekedout.Size = new System.Drawing.Size(79, 45);
+            this.btnchekedout.TabIndex = 22;
+            this.btnchekedout.Text = "Check Out";
+            this.btnchekedout.UseVisualStyleBackColor = true;
+            this.btnchekedout.Click += new System.EventHandler(this.btnchekedout_Click);
+            // 
             // CheckInSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.Controls.Add(this.btnchekedout);
             this.Controls.Add(this.txtroomId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnuserIdSearch);
@@ -267,15 +260,13 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dtpchedout);
             this.Controls.Add(this.dtpcheckedIn);
             this.Controls.Add(this.txtuserid);
-            this.Controls.Add(this.dtpchekhout);
             this.Controls.Add(this.dtchekedin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbbedType);
             this.Controls.Add(this.cmbroomType);
-            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.txtNid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAvailable);
             this.Controls.Add(this.btnShow);
@@ -298,19 +289,18 @@
         private System.Windows.Forms.Button btnAvailable;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtNid;
         private System.Windows.Forms.ComboBox cmbroomType;
         private System.Windows.Forms.ComboBox cmbbedType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label dtchekedin;
-        private System.Windows.Forms.Label dtpchekhout;
         private System.Windows.Forms.TextBox txtuserid;
         private System.Windows.Forms.DateTimePicker dtpcheckedIn;
-        private System.Windows.Forms.DateTimePicker dtpchedout;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnuserIdSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtroomId;
+        private System.Windows.Forms.Button btnchekedout;
     }
 }

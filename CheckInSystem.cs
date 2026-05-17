@@ -13,8 +13,8 @@ namespace HotelManagementSystem
 { 
     public partial class CheckInSystem : Form
     {
-        string username;
-        
+       private string username;
+
         public CheckInSystem(string username)
         {
             InitializeComponent();
@@ -33,11 +33,14 @@ namespace HotelManagementSystem
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+           
             string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "SELECT [user].userName, [room].roomNumber,[chekedin].chekedIn, [chekedin].chekedOut FROM [user] inner join [chekedin] on [user].userId = [chekedin].userId inner join [room] on [chekedin].roomId = [room].roomId";
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            string query = "SELECT [user].userName, [room].roomNumber,[chekedin].chekedIn, [chekedin].chekedOut,[user].phoneNumber,[user].email,[user].nid FROM [user] inner join [chekedin] on [user].userId = [chekedin].userId inner join [room] on [chekedin].roomId = [room].roomId";
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             DataTable dt = ds.Tables[0];
@@ -75,24 +78,37 @@ namespace HotelManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtroomId.Text) || string.IsNullOrWhiteSpace(txtuserid.Text) || string.IsNullOrWhiteSpace(dtchekedin.Text) || dtpcheckedIn.Value > dtpchedout.Value || dtpcheckedIn.Value == DateTime.MinValue || dtpchedout.Value == DateTime.MinValue)
+            if (string.IsNullOrWhiteSpace(txtroomId.Text) || string.IsNullOrWhiteSpace(txtuserid.Text) || string.IsNullOrWhiteSpace(dtchekedin.Text) || dtpcheckedIn.Value == DateTime.MinValue )
             {
-                MessageBox.Show("Please fill in all fields.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in all fields correctly.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
            
-
-            string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            SqlConnection con = new SqlConnection(connectionString);
+            string connetionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            SqlConnection con = new SqlConnection(connetionString);
             con.Open();
-            string query1 = "INSERT INTO [chekedin] (roomId, userId, chekedIn, chekedOut) VALUES (@roomId, @userId, @chekedin, @chekout)";
+            string chekingQuery = "SELECT COUNT(*) FROM [chekedin] WHERE userId = @userId";
+            SqlCommand checkCmd = new SqlCommand(chekingQuery, con);
+            checkCmd.Parameters.AddWithValue("@userId", txtuserid.Text);
+            var checkResult = (int)checkCmd.ExecuteScalar();
+            if (checkResult > 0)
+            {
+                MessageBox.Show("This user is already checked in.", "Check-in Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Close();
+                return;
+            }
+
+
+            string query1 = "INSERT INTO [chekedin] (roomId, userId, chekedIn) VALUES (@roomId, @userId, @chekedin)";
             SqlCommand cmd = new SqlCommand(query1, con);
-            cmd.Parameters.AddWithValue("@roomId", txtroomId.Text);
+            cmd.Parameters.AddWithValue("@roomId", Convert.ToInt32(txtroomId.Text));
             cmd.Parameters.AddWithValue("@userId", txtuserid.Text);
             cmd.Parameters.AddWithValue("@chekedin", dtpcheckedIn.Value);
-            cmd.Parameters.AddWithValue("@chekout", dtpchedout.Value);
-                    
-            var result = cmd.ExecuteNonQuery();
+            
+
+            var result = cmd.ExecuteScalar();
+
+
 
             if (Convert.ToInt32(result) > 0)
             {
@@ -103,10 +119,7 @@ namespace HotelManagementSystem
                 updateCmd.Parameters.AddWithValue("@roomId", txtroomId.Text);
                 updateCmd.ExecuteNonQuery();
             }
-            else
-            {
-                MessageBox.Show("Check-in failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
 
             string query = "UPDATE [room] SET roomStatus = 'Occupied' WHERE roomId = @roomId";
             SqlCommand cmdUpdate = new SqlCommand(query, con);
@@ -120,21 +133,22 @@ namespace HotelManagementSystem
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtUserName.Clear();
+            txtroomId.Clear();
             txtuserid.Clear();
-            dtchekedin.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            dtpchekhout.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            dtpcheckedIn.Text = DateTime.Now.ToString("yyyy-MM-dd");
+           
         }
+        
 
         private void btnuserIdSearch_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "SELECT firstName,lastName,userId,userName FROM [user] WHERE userName = @userName";
+            string query = "SELECT firstName,lastName,userId,userName FROM [user] WHERE nid = @nid";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@userName", txtUserName.Text);
-            
+            cmd.Parameters.AddWithValue("@nid", txtNid.Text);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -144,5 +158,13 @@ namespace HotelManagementSystem
             con.Close();
 
         }
+
+        private void btnchekedout_Click(object sender, EventArgs e)
+        {
+            CheckedoutAdmin checkedoutAdmin = new CheckedoutAdmin();
+            checkedoutAdmin.Show();
+            this.Hide();
+        }
+
     }
 }

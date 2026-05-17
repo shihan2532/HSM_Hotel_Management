@@ -179,24 +179,24 @@ namespace HotelManagementSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // checking if room number is unique
-            string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            string checkQuery = "SELECT COUNT(*) FROM Room WHERE roomNumber = @roomNumber ";
-            SqlCommand checkCmd = new SqlCommand(checkQuery, con);
-            checkCmd.Parameters.AddWithValue("@roomNumber", txtroomnumber.Text);
-            var existingCount = (int)checkCmd.ExecuteScalar();
+            //string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            //SqlConnection con = new SqlConnection(connectionString);
+            //con.Open();
+            //string checkQuery = "SELECT COUNT(*) FROM Room WHERE roomNumber = @roomNumber AND ";
+            //SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+            //checkCmd.Parameters.AddWithValue("@roomNumber", txtroomnumber.Text);
+            //var existingCount = (int)checkCmd.ExecuteScalar();
 
-            if (existingCount>0)
-            {
-                MessageBox.Show("plz change the Room Number");
-                return;
-            }
+            //if (existingCount>0)
+            //{
+            //    MessageBox.Show("plz change the Room Number");
+            //    return;
+            //}
 
-            con.Close();
+            //con.Close();
 
             // validating input fields
-            if (string.IsNullOrEmpty(txtroomnumber.Text) || cmbroomtype.SelectedIndex == 0 || cmbbed.SelectedIndex == 0 || string.IsNullOrEmpty(txtprice.Text) || cmbroomstatus.SelectedIndex == 0 || (!int.TryParse(txtroomnumber.Text, out _)))
+            if (string.IsNullOrEmpty(txtroomnumber.Text) || cmbroomtype.SelectedIndex == 0 || cmbbed.SelectedIndex == 0 || string.IsNullOrEmpty(txtprice.Text) || cmbroomstatus.SelectedIndex == 0 || (!int.TryParse(txtroomnumber.Text, out _))||cmbroomstatus.SelectedIndex == 0)
             {
                 MessageBox.Show("Please fill in all fields","Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

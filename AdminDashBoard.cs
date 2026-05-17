@@ -80,5 +80,10 @@ namespace HotelManagementSystem
             c1.Show();
             this.Close();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

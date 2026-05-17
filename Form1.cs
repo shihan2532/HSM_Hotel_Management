@@ -18,6 +18,7 @@ namespace HotelManagementSystem
         private string roleName;
         private string username;
         private string password;
+        private string nid;
 
 
         public Form1()
@@ -34,7 +35,7 @@ namespace HotelManagementSystem
 
         private void txtname_MouseClick(object sender, MouseEventArgs e)
         {
-            if (txtname.Text == "Enter your name")
+            if (txtname.Text == "Enter your nid")
             {
                 txtname.Clear();
             }
@@ -58,7 +59,7 @@ namespace HotelManagementSystem
 
             if (txtname.Text.Trim() == "")
             {
-                lblerrorname.Text = "Please enter your name";
+                lblerrorname.Text = "Please enter your nid";
 
             }
             if (txtpassword.Text.Trim() == "")
@@ -70,10 +71,10 @@ namespace HotelManagementSystem
             SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;TrustServerCertificate=True");
             con.Open();
 
-            string query = "Select role,userName,password from [user] where userName = @username and password = @password";
+            string query = "Select role,userName,password,nid from [user] where nid = @nid and password = @password";
 
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@username", txtname.Text);
+            cmd.Parameters.AddWithValue("@nid", txtname.Text);
             cmd.Parameters.AddWithValue("@password", txtpassword.Text);
 
 
@@ -89,6 +90,7 @@ namespace HotelManagementSystem
                 roleName = role["role"].ToString();
                 username = role["userName"].ToString();
                 password = role["password"].ToString();
+                nid = role["nid"].ToString();
 
 
 
@@ -97,7 +99,7 @@ namespace HotelManagementSystem
             con.Close();
             if (txtname.Text != "" && txtpassword.Text != "")
             { 
-                if( username == txtname.Text.Trim() && password == txtpassword.Text.Trim())
+                if( nid == txtname.Text.Trim() && password == txtpassword.Text.Trim())
                 {
                     if (roleName == "ADMIN")
                     {
@@ -111,7 +113,7 @@ namespace HotelManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Nid or Password","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

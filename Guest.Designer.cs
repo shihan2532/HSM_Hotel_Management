@@ -294,6 +294,7 @@
             this.btnadduser.TabIndex = 39;
             this.btnadduser.Text = "Add";
             this.btnadduser.UseVisualStyleBackColor = true;
+            this.btnadduser.Click += new System.EventHandler(this.btnadduser_Click);
             // 
             // Guest
             // 

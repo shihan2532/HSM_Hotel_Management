@@ -137,5 +137,16 @@ namespace HotelManagementSystem
             registrantionAdmin.Show();
             this.Hide();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtfname.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtlname.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtusername.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtemail.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtnid.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            richTextBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+        }
     }
 }

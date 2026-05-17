@@ -89,20 +89,20 @@ namespace HotelManagementSystem
         {
             if(txtfname.Text.Trim() == "")
             {
-                MessageBox.Show("Please enter a first name to search.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a NID NUBMER to search.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }else if (txtlname.Text.Trim() != "")
             {
-                MessageBox.Show("Please enter only first name to search.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter only NID NUMBER to search.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
                 string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
                 SqlConnection con = new SqlConnection(connectionString);
-                string query = "SELECT * FROM [user] WHERE firstName = @firstName AND role = 'GUEST'";
+                string query = "SELECT * FROM [user] WHERE nid = @nid AND role = 'GUEST'";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@firstName", txtfname.Text);
+                cmd.Parameters.AddWithValue("@nid", txtfname.Text);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -120,24 +120,26 @@ namespace HotelManagementSystem
         {
             if (txtfname.Text.Trim() == "" || txtlname.Text.Trim() == "" || txtusername.Text.Trim() == "" || txtemail.Text.Trim() == "" || txtnid.Text.Trim() == "" || txtPhone.Text.Trim() == "" || richTextBox1.Text.Trim() == "")
             {
-                MessageBox.Show("Please fill all the fields And You can change only name and adress", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
                 return;
             }
              string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"; 
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "UPDATE [user] SET firstName = @fname,lastName = @lname ,address = @address WHERE username = @username";
+            string query = "UPDATE [user] SET firstName = @fname,lastName = @lname ,address = @address,phoneNumber = @phone,email = @email WHERE username = @username";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@fname", txtfname.Text);
             cmd.Parameters.AddWithValue("@lname", txtlname.Text);
             cmd.Parameters.AddWithValue("@address", richTextBox1.Text);
+            cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+            cmd.Parameters.AddWithValue("@email", txtemail.Text);
             cmd.Parameters.AddWithValue("@username", txtusername.Text);
             var count = (int)cmd.ExecuteNonQuery();
 
             if (count>0)
             {
-                MessageBox.Show("User updated successfully.","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("User updated successfully but you cannot update your nid number.","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             con.Close();
@@ -147,6 +149,13 @@ namespace HotelManagementSystem
         {
             AdminDashBoard adminDashboard = new AdminDashBoard(username);
             adminDashboard.Show();
+            this.Hide();
+        }
+
+        private void btnadduser_Click(object sender, EventArgs e)
+        {
+            RegistrantionAdmin registrationAdmin = new RegistrantionAdmin(username);
+            registrationAdmin.Show();
             this.Hide();
         }
     }

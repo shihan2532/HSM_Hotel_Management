@@ -54,6 +54,12 @@
     <Compile Include="AdminDashBoard.Designer.cs">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckedoutAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckedoutAdmin.Designer.cs">
+      <DependentUpon>CheckedoutAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckInSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckedoutAdmin.resx">
+      <DependentUpon>CheckedoutAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckInSystem.resx">
       <DependentUpon>CheckInSystem.cs</DependentUpon>
