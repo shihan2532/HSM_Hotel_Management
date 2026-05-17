@@ -46,11 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminDashBoard.Designer.cs">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckIn.Designer.cs">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDetails.Designer.cs">
+      <DependentUpon>CustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistration.Designer.cs">
+      <DependentUpon>CustomerRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -63,6 +93,18 @@
     </Compile>
     <Compile Include="Guest.Designer.cs">
       <DependentUpon>Guest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerDashBoard.Designer.cs">
+      <DependentUpon>ManagerDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parking.Designer.cs">
+      <DependentUpon>Parking.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +120,47 @@
     <Compile Include="Room.Designer.cs">
       <DependentUpon>Room.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRoom.Designer.cs">
+      <DependentUpon>ShowRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwimmingPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwimmingPool.Designer.cs">
+      <DependentUpon>SwimmingPool.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckIn.resx">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDetails.resx">
+      <DependentUpon>CustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerRegistration.resx">
+      <DependentUpon>CustomerRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guest.resx">
       <DependentUpon>Guest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDashBoard.resx">
+      <DependentUpon>ManagerDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parking.resx">
+      <DependentUpon>Parking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Room.resx">
       <DependentUpon>Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowRoom.resx">
+      <DependentUpon>ShowRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwimmingPool.resx">
+      <DependentUpon>SwimmingPool.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

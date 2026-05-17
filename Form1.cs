@@ -106,7 +106,13 @@ namespace HotelManagementSystem
                         adminDashboard.Show();
                         this.Hide();
                     }
-
+                    else if(roleName == "MANAGER")
+                    {
+                        MessageBox.Show("Succesfully Loged In", "Message", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        ManagerDashBoard managerDashboard = new ManagerDashBoard(username);
+                        managerDashboard.Show();
+                        this.Hide();
+                    }
 
                 }
                 else

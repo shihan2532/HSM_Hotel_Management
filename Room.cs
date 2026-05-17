@@ -164,6 +164,13 @@ namespace HotelManagementSystem
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminDashBoard adminDashboard = new AdminDashBoard("");
+            adminDashboard.Show();
+            this.Hide();
+        }
     }
             
 

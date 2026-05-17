@@ -1,6 +1,6 @@
 ﻿namespace HotelManagementSystem
 {
-    partial class Guest
+    partial class AddRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRoom));
+            this.cmbroomstatus = new System.Windows.Forms.ComboBox();
+            this.cmbbed = new System.Windows.Forms.ComboBox();
+            this.cmbroomtype = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
-            this.txtnid = new System.Windows.Forms.TextBox();
-            this.txtfname = new System.Windows.Forms.TextBox();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.txtroomnumber = new System.Windows.Forms.TextBox();
             this.lblroomstatus = new System.Windows.Forms.Label();
             this.lblprice = new System.Windows.Forms.Label();
             this.lblbedtype = new System.Windows.Forms.Label();
@@ -43,17 +47,50 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblroomtype = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtusername = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lblphone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lbllname = new System.Windows.Forms.Label();
-            this.txtlname = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cmbroomstatus
+            // 
+            this.cmbroomstatus.FormattingEnabled = true;
+            this.cmbroomstatus.Items.AddRange(new object[] {
+            "select status",
+            "Available",
+            "Occupied"});
+            this.cmbroomstatus.Location = new System.Drawing.Point(837, 466);
+            this.cmbroomstatus.Name = "cmbroomstatus";
+            this.cmbroomstatus.Size = new System.Drawing.Size(298, 21);
+            this.cmbroomstatus.TabIndex = 34;
+            // 
+            // cmbbed
+            // 
+            this.cmbbed.FormattingEnabled = true;
+            this.cmbbed.Items.AddRange(new object[] {
+            "Select your Room Type",
+            "Double",
+            "Single"});
+            this.cmbbed.Location = new System.Drawing.Point(842, 326);
+            this.cmbbed.Name = "cmbbed";
+            this.cmbbed.Size = new System.Drawing.Size(298, 21);
+            this.cmbbed.TabIndex = 33;
+            // 
+            // cmbroomtype
+            // 
+            this.cmbroomtype.FormattingEnabled = true;
+            this.cmbroomtype.Items.AddRange(new object[] {
+            "Select your bed",
+            "Ac",
+            "Non-Ac"});
+            this.cmbroomtype.Location = new System.Drawing.Point(842, 247);
+            this.cmbroomtype.Name = "cmbroomtype";
+            this.cmbroomtype.Size = new System.Drawing.Size(298, 21);
+            this.cmbroomtype.TabIndex = 32;
             // 
             // btnSearch
             // 
@@ -64,65 +101,63 @@
             this.btnSearch.TabIndex = 31;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnclear
             // 
             this.btnclear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.Location = new System.Drawing.Point(837, 606);
+            this.btnclear.Location = new System.Drawing.Point(907, 527);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(125, 34);
             this.btnclear.TabIndex = 30;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = true;
-            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
-            // txtnid
+            // txtprice
             // 
-            this.txtnid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnid.Location = new System.Drawing.Point(837, 357);
-            this.txtnid.Name = "txtnid";
-            this.txtnid.Size = new System.Drawing.Size(303, 22);
-            this.txtnid.TabIndex = 29;
+            this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Location = new System.Drawing.Point(837, 392);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(303, 22);
+            this.txtprice.TabIndex = 29;
             // 
-            // txtfname
+            // txtroomnumber
             // 
-            this.txtfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfname.Location = new System.Drawing.Point(837, 148);
-            this.txtfname.Name = "txtfname";
-            this.txtfname.Size = new System.Drawing.Size(138, 22);
-            this.txtfname.TabIndex = 28;
+            this.txtroomnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtroomnumber.Location = new System.Drawing.Point(837, 167);
+            this.txtroomnumber.Name = "txtroomnumber";
+            this.txtroomnumber.Size = new System.Drawing.Size(303, 22);
+            this.txtroomnumber.TabIndex = 28;
             // 
             // lblroomstatus
             // 
             this.lblroomstatus.AutoSize = true;
             this.lblroomstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblroomstatus.Location = new System.Drawing.Point(834, 473);
+            this.lblroomstatus.Location = new System.Drawing.Point(834, 434);
             this.lblroomstatus.Name = "lblroomstatus";
-            this.lblroomstatus.Size = new System.Drawing.Size(73, 16);
+            this.lblroomstatus.Size = new System.Drawing.Size(103, 16);
             this.lblroomstatus.TabIndex = 27;
-            this.lblroomstatus.Text = "Address :";
+            this.lblroomstatus.Text = "Room Status :";
             // 
             // lblprice
             // 
             this.lblprice.AutoSize = true;
             this.lblprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprice.Location = new System.Drawing.Point(834, 321);
+            this.lblprice.Location = new System.Drawing.Point(839, 362);
             this.lblprice.Name = "lblprice";
-            this.lblprice.Size = new System.Drawing.Size(114, 16);
+            this.lblprice.Size = new System.Drawing.Size(51, 16);
             this.lblprice.TabIndex = 26;
-            this.lblprice.Text = "Passport / Nid :";
+            this.lblprice.Text = "Price :";
             // 
             // lblbedtype
             // 
             this.lblbedtype.AutoSize = true;
             this.lblbedtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbedtype.Location = new System.Drawing.Point(834, 248);
+            this.lblbedtype.Location = new System.Drawing.Point(834, 286);
             this.lblbedtype.Name = "lblbedtype";
-            this.lblbedtype.Size = new System.Drawing.Size(58, 16);
+            this.lblbedtype.Size = new System.Drawing.Size(83, 16);
             this.lblbedtype.TabIndex = 25;
-            this.lblbedtype.Text = " Email :";
+            this.lblbedtype.Text = "Bed Type :";
             // 
             // lblroomnumber
             // 
@@ -130,9 +165,9 @@
             this.lblroomnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblroomnumber.Location = new System.Drawing.Point(834, 127);
             this.lblroomnumber.Name = "lblroomnumber";
-            this.lblroomnumber.Size = new System.Drawing.Size(90, 16);
+            this.lblroomnumber.Size = new System.Drawing.Size(114, 16);
             this.lblroomnumber.TabIndex = 23;
-            this.lblroomnumber.Text = "First Name :";
+            this.lblroomnumber.Text = "Room Number :";
             // 
             // dataGridView1
             // 
@@ -141,11 +176,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(685, 385);
             this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Cyan;
+            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel2.Controls.Add(this.lblWelcome);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(112, 0);
             this.panel2.Name = "panel2";
@@ -162,20 +198,18 @@
             this.btnShow.TabIndex = 19;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.MintCream;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(22, 136);
+            this.btnAdd.Location = new System.Drawing.Point(22, 155);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 44);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Update";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -188,22 +222,21 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblroomtype
             // 
             this.lblroomtype.AutoSize = true;
             this.lblroomtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblroomtype.Location = new System.Drawing.Point(834, 185);
+            this.lblroomtype.Location = new System.Drawing.Point(834, 209);
             this.lblroomtype.Name = "lblroomtype";
-            this.lblroomtype.Size = new System.Drawing.Size(78, 16);
+            this.lblroomtype.Size = new System.Drawing.Size(96, 16);
             this.lblroomtype.TabIndex = 24;
-            this.lblroomtype.Text = "Username";
+            this.lblroomtype.Text = "Room Type :";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Cyan;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -212,95 +245,51 @@
             this.panel1.Size = new System.Drawing.Size(112, 661);
             this.panel1.TabIndex = 20;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.BackColor = System.Drawing.Color.MintCream;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 44);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack.BackColor = System.Drawing.Color.MintCream;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(22, 312);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 44);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // txtusername
+            // lblWelcome
             // 
-            this.txtusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(837, 213);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(303, 22);
-            this.txtusername.TabIndex = 32;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(76, 28);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(82, 20);
+            this.lblWelcome.TabIndex = 56;
+            this.lblWelcome.Text = "Welcome";
             // 
-            // txtemail
+            // pictureBox1
             // 
-            this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(837, 281);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(303, 22);
-            this.txtemail.TabIndex = 33;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(837, 509);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(303, 77);
-            this.richTextBox1.TabIndex = 34;
-            this.richTextBox1.Text = "";
-            // 
-            // lblphone
-            // 
-            this.lblphone.AutoSize = true;
-            this.lblphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblphone.Location = new System.Drawing.Point(837, 401);
-            this.lblphone.Name = "lblphone";
-            this.lblphone.Size = new System.Drawing.Size(117, 16);
-            this.lblphone.TabIndex = 35;
-            this.lblphone.Text = "Phone Number :";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(837, 434);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(303, 22);
-            this.txtPhone.TabIndex = 36;
-            // 
-            // lbllname
-            // 
-            this.lbllname.AutoSize = true;
-            this.lbllname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllname.Location = new System.Drawing.Point(1004, 127);
-            this.lbllname.Name = "lbllname";
-            this.lbllname.Size = new System.Drawing.Size(85, 16);
-            this.lbllname.TabIndex = 37;
-            this.lbllname.Text = "Last Name:";
-            // 
-            // txtlname
-            // 
-            this.txtlname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlname.Location = new System.Drawing.Point(1007, 146);
-            this.txtlname.Name = "txtlname";
-            this.txtlname.Size = new System.Drawing.Size(142, 22);
-            this.txtlname.TabIndex = 38;
-            // 
-            // Guest
+            // AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 661);
-            this.Controls.Add(this.txtlname);
-            this.Controls.Add(this.lbllname);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.lblphone);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.txtemail);
-            this.Controls.Add(this.txtusername);
+            this.Controls.Add(this.cmbroomstatus);
+            this.Controls.Add(this.cmbbed);
+            this.Controls.Add(this.cmbroomtype);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnclear);
-            this.Controls.Add(this.txtnid);
-            this.Controls.Add(this.txtfname);
+            this.Controls.Add(this.txtprice);
+            this.Controls.Add(this.txtroomnumber);
             this.Controls.Add(this.lblroomstatus);
             this.Controls.Add(this.lblprice);
             this.Controls.Add(this.lblbedtype);
@@ -310,20 +299,28 @@
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lblroomtype);
             this.Controls.Add(this.panel1);
-            this.Name = "Guest";
-            this.Text = "Guest";
+            this.Name = "AddRoom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AddRoom2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox cmbroomstatus;
+        private System.Windows.Forms.ComboBox cmbbed;
+        private System.Windows.Forms.ComboBox cmbroomtype;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnclear;
-        private System.Windows.Forms.TextBox txtnid;
-        private System.Windows.Forms.TextBox txtfname;
+        private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.TextBox txtroomnumber;
         private System.Windows.Forms.Label lblroomstatus;
         private System.Windows.Forms.Label lblprice;
         private System.Windows.Forms.Label lblbedtype;
@@ -335,13 +332,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblroomtype;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtusername;
-        private System.Windows.Forms.TextBox txtemail;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label lblphone;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.Label lbllname;
-        private System.Windows.Forms.TextBox txtlname;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
