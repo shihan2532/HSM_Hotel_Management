@@ -51,6 +51,7 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lbllname = new System.Windows.Forms.Label();
             this.txtlname = new System.Windows.Forms.TextBox();
+            this.btnadduser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -285,11 +286,22 @@
             this.txtlname.Size = new System.Drawing.Size(142, 22);
             this.txtlname.TabIndex = 38;
             // 
+            // btnadduser
+            // 
+            this.btnadduser.Location = new System.Drawing.Point(394, 527);
+            this.btnadduser.Name = "btnadduser";
+            this.btnadduser.Size = new System.Drawing.Size(85, 44);
+            this.btnadduser.TabIndex = 39;
+            this.btnadduser.Text = "Add";
+            this.btnadduser.UseVisualStyleBackColor = true;
+            this.btnadduser.Click += new System.EventHandler(this.btnadduser_Click);
+            // 
             // Guest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.Controls.Add(this.btnadduser);
             this.Controls.Add(this.txtlname);
             this.Controls.Add(this.lbllname);
             this.Controls.Add(this.txtPhone);
@@ -343,5 +355,6 @@
         private System.Windows.Forms.Label lbllname;
         private System.Windows.Forms.TextBox txtlname;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnadduser;
     }
 }
