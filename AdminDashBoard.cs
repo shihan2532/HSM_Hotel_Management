@@ -13,7 +13,7 @@ namespace HotelManagementSystem
 {
     public partial class AdminDashBoard : Form
     {
-         private string username,luserId;
+         private string username;
         
         public AdminDashBoard(string username)
         {
@@ -53,6 +53,20 @@ namespace HotelManagementSystem
             this.Hide();
         }
 
+        private void btnStaffManagement_Click(object sender, EventArgs e)
+        {
+            Staff s1 = new Staff(username);
+            s1.Show();
+            this.Close();
+        }
+
+        private void btnUserManagemt_Click(object sender, EventArgs e)
+        {
+            RegistrantionAdmin r1 = new RegistrantionAdmin(username);
+            r1.Show();
+            this.Close();
+        }
+
         private void btnRoomManagemt_Click(object sender, EventArgs e)
         {
             Room r1 = new Room(username);
@@ -60,6 +74,11 @@ namespace HotelManagementSystem
             this.Close();
         }
 
-
+        private void btnReort_Click(object sender, EventArgs e)
+        {
+            CheckInSystem c1 = new CheckInSystem(username);
+            c1.Show();
+            this.Close();
+        }
     }
 }

@@ -116,6 +116,7 @@ namespace HotelManagementSystem
                     MessageBox.Show("Room not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
+                btnclear_Click(sender, e);
             }
 
         }
@@ -132,7 +133,7 @@ namespace HotelManagementSystem
             int existingCount = (int)checkCmd.ExecuteScalar();
 
 
-            if (string.IsNullOrEmpty(txtroomnumber.Text) || cmbroomtype.SelectedIndex == 0 || cmbbed.SelectedIndex == 0 || string.IsNullOrEmpty(txtprice.Text) || cmbroomstatus.SelectedIndex == 0)
+            if (string.IsNullOrEmpty(txtroomnumber.Text) || cmbroomtype.SelectedIndex == 0 || cmbbed.SelectedIndex == 0 || string.IsNullOrEmpty(txtprice.Text) || cmbroomstatus.SelectedIndex == 0|| (!int.TryParse(txtroomnumber.Text, out _)))
             {
                 MessageBox.Show("Please fill in all fields. expecept Room status", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -167,12 +168,63 @@ namespace HotelManagementSystem
                 }
             }
         }
-
+        // back button
         private void button1_Click(object sender, EventArgs e)
         {
             AdminDashBoard adminDashBoard = new AdminDashBoard(username);
             adminDashBoard.Show();
             this.Hide();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // checking if room number is unique
+            string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string checkQuery = "SELECT COUNT(*) FROM Room WHERE roomNumber = @roomNumber ";
+            SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+            checkCmd.Parameters.AddWithValue("@roomNumber", txtroomnumber.Text);
+            var existingCount = (int)checkCmd.ExecuteScalar();
+
+            if (existingCount>0)
+            {
+                MessageBox.Show("plz change the Room Number");
+                return;
+            }
+
+            con.Close();
+
+            // validating input fields
+            if (string.IsNullOrEmpty(txtroomnumber.Text) || cmbroomtype.SelectedIndex == 0 || cmbbed.SelectedIndex == 0 || string.IsNullOrEmpty(txtprice.Text) || cmbroomstatus.SelectedIndex == 0 || (!int.TryParse(txtroomnumber.Text, out _)))
+            {
+                MessageBox.Show("Please fill in all fields","Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string connectionString2 = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            SqlConnection con1 = new SqlConnection(connectionString2);
+            con1.Open();
+            string query = "UPDATE Room SET roomNumber = @roomNumber, roomType = @roomType, bedType = @bedType, price = @price, roomStatus = @roomStatus WHERE roomId = @roomId";
+            SqlCommand cmd = new SqlCommand(query, con1);
+            cmd.Parameters.AddWithValue("@roomNumber", txtroomnumber.Text);
+            cmd.Parameters.AddWithValue("@roomType", cmbroomtype.Text);
+            cmd.Parameters.AddWithValue("@bedType", cmbbed.Text);
+            cmd.Parameters.AddWithValue("@price", txtprice.Text);
+            cmd.Parameters.AddWithValue("@roomStatus", cmbroomstatus.Text);
+            string roomId = dataGridView1.CurrentRow.Cells[0].Value.ToString(); 
+            cmd.Parameters.AddWithValue("@roomId", roomId); 
+
+            var count = cmd.ExecuteNonQuery();
+            if (count > 0)
+            {
+                MessageBox.Show("Room updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Failed to update room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con1.Close();
         }
     }
             

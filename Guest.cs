@@ -14,7 +14,7 @@ namespace HotelManagementSystem
     public partial class Guest : Form
     {
         string username;
-        private string FText, Ltext;
+  
         public Guest(string username)
         {
             InitializeComponent();

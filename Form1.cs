@@ -16,7 +16,7 @@ namespace HotelManagementSystem
     public partial class Form1 : Form
     {
         private string roleName;
-        private string username,name;
+        private string username;
         private string password;
 
 

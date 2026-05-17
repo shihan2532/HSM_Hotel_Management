@@ -67,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(926, 80);
+            this.panel1.Size = new System.Drawing.Size(924, 80);
             this.panel1.TabIndex = 0;
             // 
             // lblFname
@@ -369,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(926, 661);
+            this.ClientSize = new System.Drawing.Size(924, 661);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblerrorrole);
