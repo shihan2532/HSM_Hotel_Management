@@ -19,7 +19,7 @@ namespace HotelManagementSystem
         private string username;
         private string password;
         private string nid;
-
+        private string email;
 
         public Form1()
         {
@@ -59,7 +59,7 @@ namespace HotelManagementSystem
 
             if (txtname.Text.Trim() == "")
             {
-                lblerrorname.Text = "Please enter your nid";
+                lblerrorname.Text = "Please enter your Email";
 
             }
             if (txtpassword.Text.Trim() == "")
@@ -71,10 +71,10 @@ namespace HotelManagementSystem
             SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=FHMSDb;Integrated Security=True;TrustServerCertificate=True");
             con.Open();
 
-            string query = "Select role,userName,password,nid from [user] where nid = @nid and password = @password";
+            string query = "Select role,userName,password,nid,email from [user] where email = @email and password = @password";
 
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@nid", txtname.Text);
+            cmd.Parameters.AddWithValue("@email", txtname.Text);
             cmd.Parameters.AddWithValue("@password", txtpassword.Text);
 
 
@@ -91,6 +91,8 @@ namespace HotelManagementSystem
                 username = role["userName"].ToString();
                 password = role["password"].ToString();
                 nid = role["nid"].ToString();
+                email = role["email"].ToString();
+
 
 
 
@@ -99,7 +101,7 @@ namespace HotelManagementSystem
             con.Close();
             if (txtname.Text != "" && txtpassword.Text != "")
             { 
-                if( nid == txtname.Text.Trim() && password == txtpassword.Text.Trim())
+                if( email == txtname.Text.Trim() && password == txtpassword.Text.Trim())
                 {
                     if (roleName == "ADMIN")
                     {
@@ -119,7 +121,7 @@ namespace HotelManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Nid or Password","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Email or Password","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

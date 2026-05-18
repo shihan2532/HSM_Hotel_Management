@@ -52,16 +52,16 @@ namespace HotelManagementSystem
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(89, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 24);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nid :";
+            this.label1.Text = "Email :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(31, 310);
+            this.label2.Location = new System.Drawing.Point(49, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 1;
@@ -77,7 +77,7 @@ namespace HotelManagementSystem
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(233, 22);
             this.txtname.TabIndex = 2;
-            this.txtname.Text = "Enter your nid";
+            this.txtname.Text = "Enter your email";
             this.txtname.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtname_MouseClick);
             // 
             // txtpassword

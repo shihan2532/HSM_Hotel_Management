@@ -159,6 +159,9 @@
     <Compile Include="SwimmingPool.Designer.cs">
       <DependentUpon>SwimmingPool.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
